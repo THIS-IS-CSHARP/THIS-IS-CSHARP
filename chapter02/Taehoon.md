@@ -16,4 +16,5 @@ namespace Hello
 ```
 
 ### 연습문제 2-2 (038P)
-1: System, 2: Console
+1: System<br/>
+2: Console
