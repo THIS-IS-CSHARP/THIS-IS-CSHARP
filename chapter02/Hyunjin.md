@@ -25,7 +25,7 @@ namespace practice1
 
 연습문제02
 using System
-
+```
 Console.WriteLine("Hello World")
-
+```
 2.Console
