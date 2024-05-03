@@ -1,6 +1,7 @@
 Chapter2 처음 만드는 C# 프로그래밍
 
 연습문제01
+```
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace practice1
         }
     }
 }
+```
 1. System
 
 연습문제02
