@@ -69,16 +69,16 @@ string f = "안녕";
 using System;
 class FindError {
   static void Main() {
-    char a = "안";
+    char a = "안";  // error
     char b = '안녕'; // error
     char c = '안';
-    string d = '안';
+    string d = '안';  // error
     string e = '안녕'; // error
     string f = "안녕";
   }
 }
 ```
 
-> 단일 문자인 경우 `''`와 `""` 둘 다 사용이 가능하다. <br>
+> char 형식은 `''` , string 형식은 `""`을 사용해야한다. <br>
 > char b 의 '안녕'은 단일 문자가 아니기에 할당이 불가능해 컴파일 에러가 발생한다. <br>
 > string e 의 '안녕'은 문자열으로 ""를 사용해야 할당이 가능해 컴파일 에러가 발생한다. <br>
