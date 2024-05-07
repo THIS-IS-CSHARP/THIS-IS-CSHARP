@@ -65,6 +65,7 @@ namespace descendingOrderStars
 
 ##01번의 while, do while문
 ```
+while문문
 namespace fiveLineStars
 {
     class Program
@@ -89,6 +90,7 @@ namespace fiveLineStars
 
 ```
 ```
+do while문
 namespace fiveLineStars
 {
     class Program
