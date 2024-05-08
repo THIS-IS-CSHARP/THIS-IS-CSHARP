@@ -35,7 +35,7 @@ class StarWrite {
 
 ### 03.
 
-while 루프
+while문
 ```C#
 using System;
 
@@ -55,7 +55,7 @@ class StarWrite {
 }
 
 ```
-do-while 루프
+do-while문
 ```C#
 using System;
 
@@ -90,6 +90,27 @@ class StarWrite {
             Console.WriteLine();
             i--;
         }
+    }
+}
+```
+
+
+do-while문 - 반대로 별표표기
+```c#
+using System;
+
+class StarWrite {
+    static void Main() {
+        int i = 5;
+        do {
+            int j = 1;
+            do {
+                Console.Write("* ");
+                j++;
+            } while (j <= i);
+            Console.WriteLine();
+            i--;
+        } while (i >= 1);
     }
 }
 ```
