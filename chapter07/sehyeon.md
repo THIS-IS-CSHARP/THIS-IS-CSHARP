@@ -18,3 +18,24 @@ class Notebook
     }
 }
 ```
+
+## VITAMIN QUIZ 7-2
+```C#
+using System;
+
+public static class StringExtensions
+{
+    public static string Append(this string originalString, string appendString)
+    {
+      return originalString + appendString;
+    }
+}
+
+class Program {
+  public static void Main (string[] args) {
+    string original = "Hello";
+    string appended = original.Append(", World!");
+    Console.WriteLine(appended); // 출력: Hello, World!
+  }
+}
+```
