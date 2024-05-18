@@ -90,3 +90,93 @@ namespace Mean
 ## 설명
 메소드에서 mean의 파라미터가 double 이므로 메소드 호출시 타입 파라미터는 지역변수로 불러오므로 Mean 메소드에서 타입을 변경해도 적용되지 않으므로 참조타입으로 전달 한다. 이때 ref를 쓰면 된다
 
+# 3. 다음 코드에 Plus () 메소드가 double형 매개변수를 지원하도로 오버로딩하세요. 이 프로그램이 완성된 후의 실행 결과는 다음과 같아야 합니다.
+```
+3 + 4 = 7
+2.4 + 3.1 = 5.5
+```
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PluaOverLoadingDouble
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 3;
+            int b = 4;
+            int resultA = 0;
+
+            Plus(a, b, out resultA);
+
+            Console.WriteLine("{0} + {1} = {2}",a, b, resultA);
+
+            double x = 2.4;
+            double y = 3.1;
+            double resultB = 0;
+
+            Plus(x, y, out resultB);
+            Console.WriteLine("{0} + {1} ={2}",x, y, resultB);    
+
+        }
+
+        public static void Plus(int a, int b , out int c)
+        {
+            c = a + b;
+        }
+
+        // 이 아래에 double 형 매개변수를 받을 수 있도록
+        // 오버로딩된 Plus() 메소드를 작성하세요.
+    }
+}
+```
+
+# 수정
+```
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PluaOverLoadingDouble
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 3;
+            int b = 4;
+            int resultA = 0;
+
+            Plus(a, b, out resultA);
+
+            Console.WriteLine("{0} + {1} = {2}",a, b, resultA);
+
+            double x = 2.4;
+            double y = 3.1;
+            double resultB = 0;
+
+            Plus(x, y, out resultB);
+            Console.WriteLine("{0} + {1} ={2}",x, y, resultB);    
+
+        }
+
+        public static void Plus(int a, int b , out int c)
+        {
+            c = a + b;
+        }
+
+        public static void Plus(double x, double y, out double resultB)
+        {
+            resultB = x + y;
+        }
+    }
+}
+
+```
