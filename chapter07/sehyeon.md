@@ -195,4 +195,4 @@ private static double GetDiscountRate(object client)
 ```
 - client가 튜플 string,int 타입인지 확인하기 위해 is 연산자 사용
 - client를 튜플로 변환후, 튜플의 첫번쨰 요소 type에 대해 switch문 사용
-- 각 case 블록 내에서 age 에 대한 추가 조건을 검사하여 적절한 할인율을 설정정
+- 각 case 블록 내에서 age 에 대한 추가 조건을 검사하여 적절한 할인율을 설정
