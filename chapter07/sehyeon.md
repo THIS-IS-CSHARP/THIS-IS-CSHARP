@@ -116,3 +116,83 @@ class MyClass {
 ### 정답 : 2️⃣, 3️⃣ <br>
 2. 구조체의 모든 값 형식 필드는 깊은 복사가 이루어지지만, 참조형식 필드는 얕은 복사가 이루어진다. <br>
 3. 구초제는 값형식이다. 클래스와 달리, 구조체의 인스턴스는 힙이 아닌 스택에 할당되고, 참조가 아닌 값자체를 전달한다.
+
+## 05. 다음 코드를 컴파일 및 실행이 가능하도록 수정
+
+### 정답
+readonly 메서드에서는 필드를 수정할수 없으므로, 필드를 변경하지않고, 계산 결과를 반환만한다.그러면 컴파일 오류가 발생하지않고, 프로그램이 정상적으로 실행된다.
+
+```C#
+using System;
+struct ACSetting
+{
+    public double currentInCelsius; // 현재온도
+    public double target; // 희망 온도
+
+    public readonly double GetFahrenheit()
+    {
+        return currentInCelsius * 1.8 + 32; 
+
+    }
+}
+class Program {
+  public static void Main (string[] args) {
+    ACSetting acs;
+    acs.currentInCelsius = 25;
+    acs.target = 25;
+
+    Console.WriteLine($"{acs.GetFahrenheit()}");
+    Console.WriteLine($"{acs.target}");
+
+  }
+}
+```
+
+## 06. 다형성은 무엇이며, 오버라이딩과 무슨 관계가 있는지 설명하기
+- 다형성: 객체가 여러 형태를 가질수 있음을 의미하며, 주로 상속과 인터페이스를 통해 구현된다.
+- 오버라이딩: 자식클래스에서 부모클래스의 메서드를 재정의하는 것을 의미한다. 부모클래스의 메서드는 virtual키워드로 정의되어야하고, 자식클래스이 메서드는  override 키워드로 재정의해야한다.
+- 다형성 오버라이딩의 관계: 다형성은 오버라이딩을 통해 구현되고, 이를 통해 동일한 인터페이스를 공유하는 객체들이 서로 다른 방식으로 동작할수 있게 한다.
+- 다형성 덕분에 부모 클래스의 참조 변수가 자식클래스의 객체를 가리킬때, 실제 객쳉듸 타입에 따라 메서드가 동작한다.
+## 07. 다음 코드에서 switch식을 제거하고 switch문으로 동일한 기능을 작성
+
+```C#
+private static double GetDiscountRate(object client)
+ {
+     double discount = 0;
+
+     if(client is ValueTuple<string, int> tuple)
+     {
+         var (type, age) = tuple;
+         switch (type)
+         {
+             case "학생":
+                 if(age < 18)
+                 {
+                     discount = 0.2;
+                 }
+                 else
+                 {
+                     discount = 0.1;
+                 }
+                 break;
+             case "일반":
+                 if(age <18)
+                 {
+                     discount = 0.1;
+                 }
+                 else
+                 {
+                     discount = 0.05;
+                 }
+                 break;
+             default:
+                 discount = 0;
+                 break;
+         }
+     }
+     return discount;
+ }
+```
+- client가 튜플 string,int 타입인지 확인하기 위해 is 연산자 사용
+- client를 튜플로 변환후, 튜플의 첫번쨰 요소 type에 대해 switch문 사용
+- 각 case 블록 내에서 age 에 대한 추가 조건을 검사하여 적절한 할인율을 설정정
