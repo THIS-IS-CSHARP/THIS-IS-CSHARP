@@ -22,7 +22,7 @@ namespace FuncTest
 ```
 
 
-## 02 익명메소드를 람다식으로 수정
+### 02 익명메소드를 람다식으로 수정
 
 ```C#
 namespace LambdaExpression
