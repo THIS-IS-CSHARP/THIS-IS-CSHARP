@@ -7,7 +7,7 @@ Func<int, int> func_2 = () => a * 2;
 Console.WriteLine(func_1() + func_2(30));
 
 ```
-##정답
+## 정답
 10 + 60 = 70
 
 # 연습문제 02
