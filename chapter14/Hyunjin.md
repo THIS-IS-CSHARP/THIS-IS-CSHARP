@@ -13,8 +13,8 @@ Console.WriteLine(func_1() + func_2(30));
 # 연습문제 02
 ## 다음 코드에서 익명 메소드를 람다식으로 수정하세요
 
-```
 ## 수정
+```
 using system
 namespace Ex14_2
 {
